@@ -22,9 +22,9 @@ def connect_to_endpoint(url, headers, params = {}, next_token = None):
 
 json_response = connect_to_endpoint(get_userid_endpoint, headers)
 
-print(json.dumps(json_response))
+now = time.strftime("%Y-%m-%d")
 
-with open('userid-{}.json'.format(), 'w') as f:
+with open('./userids/{}-{}.json'.format(username, now), 'w') as f:
     json.dump(json_response, f)
 
 
